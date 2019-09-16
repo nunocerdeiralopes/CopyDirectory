@@ -20,8 +20,7 @@ namespace CopyDirectory
             InitializeComponent();
             columnHeader.Width = -2;
         }
-
-        private void Source_Click(object sender, EventArgs e)
+        public void FolderBrowserDialogUpdateTextBox(TextBox textBox)
         {
             using (var fbd = new FolderBrowserDialog())
             {
@@ -29,23 +28,19 @@ namespace CopyDirectory
 
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
-                    Source.Text = fbd.SelectedPath;
+                    textBox.Text = fbd.SelectedPath;
 
                 }
             }
         }
+        private void Source_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialogUpdateTextBox(Source);
+        }
 
         private void Target_Click(object sender, EventArgs e)
         {
-            using (var fbd = new FolderBrowserDialog())
-            {
-                DialogResult result = fbd.ShowDialog();
-
-                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                {
-                    Target.Text = fbd.SelectedPath;
-                }
-            }
+            FolderBrowserDialogUpdateTextBox(Target);
         }
 
         private async void CopyButton_Click(object sender, EventArgs e)
