@@ -1,4 +1,4 @@
-﻿﻿# Copy Directory
+﻿﻿.# Copy Directory
 
 
 Simple Windows Forms program to copy directories recursively.
