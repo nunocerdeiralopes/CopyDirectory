@@ -124,7 +124,7 @@
             this.Controls.Add(this.Target);
             this.Controls.Add(this.Source);
             this.Name = "Window";
-            this.Text = "Window";
+            this.Text = "Copy Directories";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
